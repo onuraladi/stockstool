@@ -17,7 +17,7 @@ class config:
             MainMenu {visibility:visible}</style>"""
 
     def conf(self):
-        st.set_page_config(page_title="  Forecast By Investant", page_icon=":mag_right:", layout="wide")
+        st.set_page_config(page_title="  Halleluia Stocks Analysis", page_icon=":mag_right:", layout="wide")
         st.markdown(self.configuration, unsafe_allow_html=True)
         
 # getting the ticker values of the companies using this class
