@@ -263,7 +263,7 @@ st.sidebar.write("##")
 butt = st.sidebar.button("Enter")
 if butt:
     with st.empty():
-        st.header('Please wait results are being prepared')
+        st.header('Please wait results are being prepared by Halleluia')
         tickr,company = a.tick()
         data = None
         if tickr:
