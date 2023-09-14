@@ -26,11 +26,11 @@ class Asset:
     futInterval = None
     c=None
     def __init__(self):
-        indexes = ["Bist100", "NASDAQ-100", " "]
+        indexes = ["S&P 500", "NASDAQ-100", " "]
         index = st.sidebar.selectbox("Select Index", options=indexes, index=2)
         st.sidebar.write("##")
 
-        spUrl = pd.read_html('https://en.wikipedia.org/wiki/List_of_companies_listed_on_the_Istanbul_Stock_Exchange')
+        spUrl = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies#S&P_500_component_stocks')
         spcomp = spUrl[0]['Security']
         spsym = spUrl[0]['Symbol']
         sp = {}
@@ -46,7 +46,7 @@ class Asset:
 
         opt = []
         company=None
-        if index == "Bist100":
+        if index == "S&P 500":
             # variable for ptr
             comp = st.sidebar.text_input("Enter Company Name")
             if comp:
@@ -78,7 +78,7 @@ class Asset:
             company = st.sidebar.selectbox("Select Company", options=opt)
 
         self.tickr=None
-        if index == "Bist100":
+        if index == "S&P 500":
             if comp:
                 try:
                     self.tickr = sp[company]
